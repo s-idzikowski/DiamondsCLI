@@ -13,8 +13,8 @@ namespace DiamondsCLI
             }
             else
             {
-                Serwis darkW = new Serwis("https://darkw.pl/ucp.php?mode=login",
-                                          "https://darkw.pl/app.php/diamonds/lottery",
+                Serwis darkW = new Serwis("https://darkw.pl//login/",
+                                          "https://darkw.pl/ajax/diamondsLotery/1/",
                                           args[0],
                                           args[1]);
                 darkW.Zaloguj();

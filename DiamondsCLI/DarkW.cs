@@ -30,9 +30,9 @@ namespace DiamondsCLI
             request.ContentType = "application/x-www-form-urlencoded";
 
             StringBuilder data = new StringBuilder();
-            data.Append("username=" + Uri.EscapeDataString(Login));
-            data.Append("&password=" + Uri.EscapeDataString(Haslo));
-            data.Append("&login=Zaloguj");
+            data.Append("loginUserLogin=" + Uri.EscapeDataString(Login));
+            data.Append("&loginUserPass=" + Uri.EscapeDataString(Haslo));
+            data.Append("&postAction=1");
 
             byte[] byteData = UTF8Encoding.UTF8.GetBytes(data.ToString());
             request.ContentLength = byteData.Length;
@@ -47,7 +47,7 @@ namespace DiamondsCLI
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(LinkDoLosowania);
             request.CookieContainer = CookieContainer;
-            request.Method = "GET";
+            request.Method = "POST";
             request.UserAgent = "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:52.0) Gecko/20100101 Firefox/52.0";
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
